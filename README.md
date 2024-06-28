@@ -7,6 +7,7 @@ Output of the program is given below
 Running the program using RISC-V
 ![CALCULATION OF RISC V PROCESSOR](https://github.com/kavithareddy1706/TASK-1/assets/173707290/6851096b-57e3-4e27-ac75-b97c0bdc0b18)
 ![USING FAST INSTURCTIONS](https://github.com/kavithareddy1706/TASK-1/assets/173707290/d26e3533-153d-42f9-af78-c9f335e7e702)
+
 TASK-2
 Write a C program for a 7 segment display driver
 
