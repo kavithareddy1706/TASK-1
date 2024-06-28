@@ -10,35 +10,19 @@ Running the program using RISC-V
 
 TASK-2
 Write a C program for a 7 segment display driver
+![C PROG FOR 7 SEGMENT](https://github.com/kavithareddy1706/TASK-1/assets/173707290/a36bc53e-8019-4a9c-8758-3e3adcedf0a2)
+The below image shows the output
+![OUTPUT](https://github.com/kavithareddy1706/TASK-1/assets/173707290/a46c8944-1199-4e75-808e-b77004d54952)
 
-int segment_Pins[] = {2,3,4,5,6,7,8,9}; 
-// Truth table which we saw earlier
-byte segmentCode[10][8] = {
-    //  a  b  c  d  e  f  g  .
-    {1, 1, 1, 1, 1, 1, 0, 0},  // 0
-    {0, 1, 1, 0, 0, 0, 0, 0},  // 1
-    {1, 1, 0, 1, 1, 0, 1, 0},  // 2
-    {1, 1, 1, 1, 0, 0, 1, 0},  // 3
-    {0, 1, 1, 0, 0, 1, 1, 0},  // 4
-    {1, 0, 1, 1, 0, 1, 1, 0},  // 5
-    {1, 0, 1, 1, 1, 1, 1, 0},  // 6
-    {1, 1, 1, 0, 0, 0, 0, 0},  // 7
-    {1, 1, 1, 1, 1, 1, 1, 0},  // 8
-    {1, 1, 1, 1, 0, 1, 1, 0},  // 9
-};
-void Display(int number) {
-    for (int i = 0; i < 8; i++) {
-        digitalWrite(segment_Pins[i], segmentCode[number][i]);
-    }
-}
-void setup() {
-    for (int i = 0; i < 8; i++) {
-        pinMode(segment_Pins[i], OUTPUT);
-    }
-}
-void loop() {
-    for (int n = 0; n < 10; n++) {
-        Display(n);
-        delay(1000);
-    }
-}
+TASK-3
+SPIKE Simulation and observation with -O1 and -Ofast.
+Code-:
+![C PROGR](https://github.com/kavithareddy1706/TASK-1/assets/173707290/208da79d-7b41-4a11-af97-02d07c80a749)
+Outputs in C language GCC and RISC-V GCC:
+![O1](https://github.com/kavithareddy1706/TASK-1/assets/173707290/347dbd02-296c-4af2-bdfd-b6bbd17cbad0)
+In "O1" Mode
+![O1m](https://github.com/kavithareddy1706/TASK-1/assets/173707290/e9210af2-8531-431d-945d-8a878c9b8e58)
+![O1-2m](https://github.com/kavithareddy1706/TASK-1/assets/173707290/bd227202-cbec-440b-8970-11a91025ed87)
+In "Ofast" Mode
+![Of1](https://github.com/kavithareddy1706/TASK-1/assets/173707290/801a492e-25cb-48b1-af0f-3083f04c6f5d)
+![Of2](https://github.com/kavithareddy1706/TASK-1/assets/173707290/e2151f00-5754-4298-a5d8-6b9097bcc568)
