@@ -7,3 +7,37 @@ Output of the program is given below
 Running the program using RISC-V
 ![CALCULATION OF RISC V PROCESSOR](https://github.com/kavithareddy1706/TASK-1/assets/173707290/6851096b-57e3-4e27-ac75-b97c0bdc0b18)
 ![USING FAST INSTURCTIONS](https://github.com/kavithareddy1706/TASK-1/assets/173707290/d26e3533-153d-42f9-af78-c9f335e7e702)
+TASK-2
+Write a C program for a 7 segment display driver
+
+int segment_Pins[] = {2,3,4,5,6,7,8,9}; 
+// Truth table which we saw earlier
+byte segmentCode[10][8] = {
+    //  a  b  c  d  e  f  g  .
+    {1, 1, 1, 1, 1, 1, 0, 0},  // 0
+    {0, 1, 1, 0, 0, 0, 0, 0},  // 1
+    {1, 1, 0, 1, 1, 0, 1, 0},  // 2
+    {1, 1, 1, 1, 0, 0, 1, 0},  // 3
+    {0, 1, 1, 0, 0, 1, 1, 0},  // 4
+    {1, 0, 1, 1, 0, 1, 1, 0},  // 5
+    {1, 0, 1, 1, 1, 1, 1, 0},  // 6
+    {1, 1, 1, 0, 0, 0, 0, 0},  // 7
+    {1, 1, 1, 1, 1, 1, 1, 0},  // 8
+    {1, 1, 1, 1, 0, 1, 1, 0},  // 9
+};
+void Display(int number) {
+    for (int i = 0; i < 8; i++) {
+        digitalWrite(segment_Pins[i], segmentCode[number][i]);
+    }
+}
+void setup() {
+    for (int i = 0; i < 8; i++) {
+        pinMode(segment_Pins[i], OUTPUT);
+    }
+}
+void loop() {
+    for (int n = 0; n < 10; n++) {
+        Display(n);
+        delay(1000);
+    }
+}
