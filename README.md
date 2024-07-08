@@ -49,6 +49,9 @@ TASK-4
 RISC-V Instructions
 Identify various RISC-V instruction type (R, I, S, B, U, J) and exact 32-bit instruction code in the instruction type format for below RISC-V instructions 
 
+![Screenshot 2024-07-08 192546](https://github.com/kavithareddy1706/TASK-1/assets/173707290/98e91c13-93f6-4b2c-94b2-cd12dafadd55)
+
+
  ADD r1, r2, r3
  SUB r3, r1, r2
  AND r2, r1, r3
@@ -75,11 +78,20 @@ The upper 12 bits of I-type is an immediate number. The opcode is different from
 S-type：
 The characteristic of S-type instruction is that there is no rd register. In this type of instruction, the immediate is divided into two parts, the first part is in bit11-5, and the second part is in bit4-0. The 5 bits of the immediate 4-0 occupy the position of rd in other instruction formats, and 5-11 occupy the position of funct7. Explain that the command format does not need to write back. That is, read the two values from the two registers and perform the operation together with the immediate, and write the result to the register after the operation is over.
 
+![Screenshot 2024-07-08 192130](https://github.com/kavithareddy1706/TASK-1/assets/173707290/64a896f9-d4a7-41c3-bbb5-6330449f6471)
+
+
 U-Type
 A 20-bit immediate is provided in the U-type instruction. The final operation result is related to the 20-bit immediate, and the result is written back to the rd register. The opcode determines the type of operation. There are no funct3, rs1, rs2, and funct7 in U-type. This type of instruction structure is very simple.
+
+![Screenshot 2024-07-08 192027](https://github.com/kavithareddy1706/TASK-1/assets/173707290/1d667757-8091-43c4-b641-1fcf0a2f539b)
+
 
 B-Type
 B-type instructions are mainly used as branch instructions, but they are conditional Branch. It means to decide whether to jump or not need to depend on whether the condition is valid. The B-type machine code structure is shown in Figure 2-1. The instruction does not include rd register and funct7, but contains rs1, rs2, funct3 and immediate. The immediate is divided into two areas. The encoding of B-type instruction immediate is out of order. The reason is not described in detail here. There is a specific article on the official site explaining why it is out of order. In short, it has been verified that the effect on CPU operation function when the immediate number sequence is in this order is very well. But the immediate is disrupted, so it will be decoded when the CPU executes in the future. After decoding, the CPU needs to restore the disrupted immediate in order. For example, when the CPU gets a B-type instruction, the immediate in it is scrambled, and the CPU needs to arrange the immediate in the order of 12-1 to restore the immediate.
 
 J-Type
 The format of this instruction is very similar to U-type, it only have Rd register and immediate and opcode. At the same time, the immediate of J-type is also disrupted. That means that the CPU must first put the immediate numbers together to restore the original immediate numbers when decoding.
+
+![Screenshot 2024-07-08 191941](https://github.com/kavithareddy1706/TASK-1/assets/173707290/c56807d8-65dc-4f23-80d6-aa7cacc30363)
+
