@@ -91,3 +91,43 @@ The format of this instruction is very similar to U-type, it only have Rd regist
 ![Screenshot 2024-07-08 191941](https://github.com/kavithareddy1706/TASK-1/assets/173707290/c56807d8-65dc-4f23-80d6-aa7cacc30363)
 
 32-bit pattern for the given instructions:
+
+1 -> ADD r1, r2, r3
+     32 bit instruction: 0000000_00011_00010_000_00001_0110011
+
+2 -> SUB r3, r1, r2
+     32 bit instruction: 0100000_00010_00001_000_00011_0110011
+
+3 -> AND r2, r1, r3
+     32 bit instruction: 0000000_00011_00001_111_00010_0110011
+
+4 -> OR r8, r2, r5
+     32 bit instruction: 0000000_00101_00010_110_01000_0110011
+
+5 -> XOR r8, r1, r4
+     32 bit instruction: 0000000_00100_00001_100_01000_0110011
+
+6 -> SLT r10, r2, r4
+     32 bit instruction: 0000000_00100_00010_010_01010_0110011
+
+7 -> ADDI r12, r3, 5
+     32 bit instruction: 000000001001_00011_000_01100_0010011
+
+8 -> SW r3, r1, 4
+     32 bit instruction: 0000000_00011_00001_010_00100_0100011
+
+9 -> SRL r16, r11, r2
+     32 bit instruction: 0000000_00010_01011_101_10000_0110011
+
+10 -> BNE r0, r1, 20
+      32 bit instruction: 0000001_00001_00000_001_01000_1100011
+
+11 -> BEQ r0, r0, 15
+      32 bit instruction: 0000000_00000_00000_000_11110_1100011
+
+12 -> LW r13, r11, 2
+      32 bit instruction: 000000000010_01011_010_01101_0000011
+
+13 -> SLL r15, r11, r2
+      32 bit instruction: 0000000_00010_01011_001_01111_0110011
+
